@@ -1416,6 +1416,7 @@ See [LICENSE](/LICENSE)
 We encourage you to fork this guide and change the rules to fit your team's style guide. Below, you may list some amendments to the style guide. This allows you to periodically update your style guide without having to deal with merge conflicts.
 
 <a name="pxo"></a>
+<a name="megascans"></a>
 <a name="8"></a>
 ## 8. Megascans
 
@@ -1444,6 +1445,8 @@ The structure below should shed some light on what that entails.
 	
 <pre>
 |-- Content
+    |-- <a href="#megascans">Megascans</a>
+    |-- <a href="#megascans">MSPresets</a>
     |-- <a href="#2.2">RLZ_ShowTitle</a>
         |-- Characters
 	|   |-- Mannequin
@@ -1495,6 +1498,8 @@ The key difference with Interaction-Based projects is the <a href="#2.4">Maps</a
 	
 <pre>
 |-- Content
+    |-- <a href="#megascans">Megascans</a>
+    |-- <a href="#megascans">MSPresets</a>
     |-- <a href="#2.2">RLZ_LEDDemo</a>
         |-- Characters
 	|   |-- Mannequin
