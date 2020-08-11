@@ -1538,4 +1538,18 @@ The key difference with Interaction-Based projects is the <a href="#2.4">Maps</a
 	|   |   |   |-- mdl
 </pre>
 
+## 10. PXO Shots
+
+Description
+
+<a name="10.1"></a>
+<a name="shots-levelstructure"></a>
+### 10.1 Levels
+Levels can be found in the shot's root folder and must be named according to the _Gamemakin LLC_ style guide.
+As per the style guide, the master level is labeled _without_ a suffix. 
+
+### 10.2 Sequencer Workflow
+
+### 10.3 Cameras
+
 # };
