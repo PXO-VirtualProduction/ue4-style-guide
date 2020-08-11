@@ -1415,4 +1415,55 @@ See [LICENSE](/LICENSE)
 
 We encourage you to fork this guide and change the rules to fit your team's style guide. Below, you may list some amendments to the style guide. This allows you to periodically update your style guide without having to deal with merge conflicts.
 
+<a name="pxo"></a>
+<a name="8"></a>
+## 8. PXO Content Directory Structure
+
+PXO projects can be divided into two categories: Shot-Based and Demo-Based.
+Listed below are examples of project structures for both types of PXO projects.
+
+<a name="8e1"><a>
+### 8e1 Example Shot-Based Project Content Structure
+
+Shot-Based projects are meant to more closely resemble the X:/ Drive's structure.
+The structure below should shed some light on what that entails.
+	
+<pre>
+|-- Content
+    |-- <a href="#2.2">GenericShooter</a>
+        |-- Characters
+        |   |-- Bob
+        |   |-- Common
+        |   |   |-- <a href="#2.7">Animations</a>
+        |   |   |-- Audio
+        |   |-- Jack
+        |   |-- Steve
+        |   |-- <a href="#2.1.3">Zoe</a>
+        |-- Props
+	|   |-- RocketLauncher
+	|-- Vehicles
+	    |-- AlienShip
+        |-- Effects
+        |   |-- Electrical
+        |   |-- Fire
+        |   |-- Weather
+        |-- <a href="#2.4">Maps</a>
+        |   |-- Campaign1
+        |   |-- Campaign2
+        |-- <a href="#2.8">MaterialLibrary</a>
+        |   |-- Debug
+        |   |-- Metal
+        |   |-- Paint
+        |   |-- Utility
+        |   |-- Weathering
+        |-- Placeables
+        |   |-- Pickups
+        |-- Weapons
+            |-- Common
+            |-- Pistols
+            |   |-- DesertEagle
+            |   |-- RocketPistol
+            |-- Rifles
+</pre>
+
 # };
