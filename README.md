@@ -1421,7 +1421,7 @@ We encourage you to fork this guide and change the rules to fit your team's styl
 
 Megascan folders are placed outside of the root project folder, due to the Bridge plugin's import directory.
 This is admissible, as it still conforms to the _Gamemakin LLC_ style guide.
-An example of this can be seen in the Content Directory Structures below.
+An example of this can be seen in the <a href="#pxo-cds">content directory structures</a> below.
 
 > If these assets are being modified at all, they should be branched into their own `Props` folder under the primary project (i.e. `RLZ_ShowTitle`) This includes their dependencies (i.e. textures, LODs).
 
