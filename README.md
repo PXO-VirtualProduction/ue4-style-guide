@@ -1417,7 +1417,18 @@ We encourage you to fork this guide and change the rules to fit your team's styl
 
 <a name="pxo"></a>
 <a name="8"></a>
-## 8. PXO Content Directory Structure
+## 8. Megascans
+
+Megascan folders are placed outside of the root project folder, due to the Bridge plugin's import directory.
+This is admissible, as it still conforms to the _Gamemakin LLC_ style guide.
+An example of this can be seen in the Content Directory Structures below.
+
+> If these assets are being modified at all, they should be branched into their own `Props` folder under the primary project (i.e. `RLZ_ShowTitle`).
+This includes their dependencies (i.e. textures, LODs).
+
+<a name="pxo-cds"></a>
+<a name="9"></a>
+## 9. PXO Content Directory Structure
 
 PXO projects can be divided into two categories: Shot-Based and Demo-Based.
 Listed below are examples of project structures for both types of PXO projects.
@@ -1426,15 +1437,15 @@ Listed below are examples of project structures for both types of PXO projects.
 
 Examples of this can be seen in the structures below.
 
-<a name="8e1"><a>
-### 8e1 Example Shot-Based Project Content Structure
+<a name="9e1"><a>
+### 9e1 Example Shot-Based Project Content Structure
 
 Shot-Based projects are meant to more closely resemble the X:/ Drive's structure.
 The structure below should shed some light on what that entails.
 	
 <pre>
 |-- Content
-    |-- <a href="#2.2">GenericShooter</a>
+    |-- <a href="#2.2">RLZ_ShowTitle</a>
         |-- Characters
 	|   |-- Mannequin
         |   |   |-- <a href="#2.7">Animations</a>
@@ -1457,6 +1468,7 @@ The structure below should shed some light on what that entails.
         |-- <a href="#2.8">MaterialLibrary</a>
         |   |-- Metal
         |   |-- Paint
+	|   |-- Concrete
         |   |-- Utility
 	|   |   |-- Debug
         |   |   |-- Tileables
