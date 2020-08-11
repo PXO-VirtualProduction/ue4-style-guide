@@ -1540,16 +1540,35 @@ The key difference with Interaction-Based projects is the <a href="#2.4">Maps</a
 
 ## 10. PXO Shots
 
-Description
+The following is a breakdown of our shot-by-shot practices.  
 
 <a name="10.1"></a>
-<a name="shots-levelstructure"></a>
-### 10.1 Levels
-Levels can be found in the shot's root folder and must be named according to the _Gamemakin LLC_ style guide.
-As per the style guide, the master level is labeled _without_ a suffix. 
+<a name="shots-root-folder"></a>
+### 10.1 Root Folder
+Levels and sequencers can be found in the shot's root folder and must be named according to the _Gamemakin LLC_ style guide.  
+As per the style guide, the master level (and in this case, sequencer) is labeled _without_ a suffix.  
+As shots are split into tasks, the levels/sequencers can be split using a suffix.  
+![Shot Root Folder](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_shots-cdstructure-root.PNG "Shot Root Folder")
 
 ### 10.2 Sequencer Workflow
+Sequencers should always be streamed into a master sequence (labeled _without_ a suffix)  
+Cameras should be imported as **Shot** tracks.  
+Tasks (i.e. Lighting, FX, Layout, Anim) should be imported as **Subscenes**.  
+This allows for easy camera-locking through the sequencer, as well as a visual distinction between tasks and cameras.  
+![Shot Tracks and Subscenes](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_shots-workflow-masterseqencer-shotsandsubscenes.PNG "Shot Tracks and Subscenes")
 
 ### 10.3 Cameras
+
+#### 10.3.1 Naming our Camera Sequencers
+As opposed to the standard Level Sequencer prefix, cameras are identified with the _\_CAM_ prefix.  
+![Camera Sequencer Assets](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_shots-cdstructure-cameras.PNG "Camera Sequencer Assets")  
+
+#### 10.3.2 Naming our Imported Cameras
+Imported cameras are not Unreal assets in and of themselves; they are instead, spawnable actors contained in a Level Sequencer asset.  
+What does this mean for our workflow? This means that once a camera is imported, we have no way of knowing its source path; therefore, we have no way of knowing its version number, or its original Maya artist.  
+For this reason, we should be extra descriptive when naming our camera actors. 
+
+Imported camera _actors_ should follow the naming structure: `CAM_Descriptor_Version_OriginalArtistInitials`.  
+![Imported Camera Actor Naming](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_shots-workflow-camera-labeling.PNG "Imported Camera Actor Naming")  
 
 # };
