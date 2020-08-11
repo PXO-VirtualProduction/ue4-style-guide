@@ -1422,6 +1422,8 @@ We encourage you to fork this guide and change the rules to fit your team's styl
 PXO projects can be divided into two categories: Shot-Based and Demo-Based.
 Listed below are examples of project structures for both types of PXO projects.
 
+> While we are adhering to Allar's [rules regarding asset-type-based folders](#2-content-directory-structure-), certain assets may require bulk imports from the X:/ drive. In these cases, we can create an **'Import'** folder. Within this folder, we can mimic the asset's **publish** folder. Examples of this can be seen in the example structures below.
+
 <a name="8e1"><a>
 ### 8e1 Example Shot-Based Project Content Structure
 
@@ -1432,12 +1434,10 @@ The structure below should shed some light on what that entails.
 |-- Content
     |-- <a href="#2.2">GenericShooter</a>
         |-- Characters
-        |   |-- Bob
-        |   |-- Common
+	|   |-- Mannequin
         |   |   |-- <a href="#2.7">Animations</a>
         |   |   |-- Audio
-        |   |-- Jack
-        |   |-- Steve
+        |   |-- Burnham
         |   |-- <a href="#2.1.3">Zoe</a>
         |-- Props
 	|   |-- RocketLauncher
@@ -1447,7 +1447,7 @@ The structure below should shed some light on what that entails.
         |   |-- Electrical
         |   |-- Fire
         |   |-- Weather
-        |-- <a href="#2.4">Maps</a>
+        |-- Environments
         |   |-- Campaign1
         |   |-- Campaign2
         |-- <a href="#2.8">MaterialLibrary</a>
