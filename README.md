@@ -1423,14 +1423,13 @@ Megascan folders are placed outside of the root project folder, due to the Bridg
 This is admissible, as it still conforms to the _Gamemakin LLC_ style guide.
 An example of this can be seen in the Content Directory Structures below.
 
-> If these assets are being modified at all, they should be branched into their own `Props` folder under the primary project (i.e. `RLZ_ShowTitle`).
-This includes their dependencies (i.e. textures, LODs).
+> If these assets are being modified at all, they should be branched into their own `Props` folder under the primary project (i.e. `RLZ_ShowTitle`) This includes their dependencies (i.e. textures, LODs).
 
 <a name="pxo-cds"></a>
 <a name="9"></a>
 ## 9. PXO Content Directory Structure
 
-PXO projects can be divided into two categories: Shot-Based and Demo-Based.
+PXO projects can be divided into two categories: Shot-Based and Interaction-Based.
 Listed below are examples of project structures for both types of PXO projects.
 
 > While we are adhering to Allar's [rules regarding asset-type-based folders](#2-content-directory-structure-), certain assets may require bulk imports from the X:/ drive. In these cases, we can create an `Import` folder. Within this folder, we can mimic the asset's `_publish` folder (minus the channel [i.e. `clr`, `nrm`] folders, and `fullres` folders, as they are redundant due to Unreal's search functions and filters).
@@ -1452,13 +1451,14 @@ The structure below should shed some light on what that entails.
         |   |   |-- Audio
         |   |-- Burnham
         |   |-- <a href="#2.1.3">Zoe</a>
+	|-- Cinematic
+	|   |-- CameraShake
+	|-- Lighting
+	|   |-- HDRI
+	|   |   |-- Dawn
+	|   |   |-- Overcast
         |-- Props
 	|   |-- RocketLauncher
-	|-- Vehicles
-	|   |-- LargeAlienShip
-	|   |   |-- Import
-	|   |   |   |-- txt
-	|   |   |   |-- mdl
         |-- Effects
         |   |-- Electrical
         |   |-- Fire
@@ -1466,9 +1466,10 @@ The structure below should shed some light on what that entails.
         |-- Environments
         |   |-- Canyon
         |-- <a href="#2.8">MaterialLibrary</a>
-        |   |-- Metal
+        |   |-- MaterialFunctions
+	|   |-- Metal
         |   |-- Paint
-	|   |-- Concrete
+	|   |-- Landscape
         |   |-- Utility
 	|   |   |-- Debug
         |   |   |-- Tileables
@@ -1479,6 +1480,57 @@ The structure below should shed some light on what that entails.
 	|   |   |   |   |-- v001
 	|   |   |   |-- Cameras
 	|   |   |   |-- Layout
+	|-- Vehicles
+	|   |-- LargeAlienShip
+	|   |   |-- Import
+	|   |   |   |-- txt
+	|   |   |   |-- mdl
+</pre>
+
+<a name="9e2"><a>
+### 9e2 Example Interaction-Based Project Content Structure
+
+Much like Shot-Based projects, Interaction-Based projects are pulled slightly towards our X:/ drive's structure.
+The key difference with Interaction-Based projects is the <a href="#2.4">Maps</a> folder. The 'Environments' folder is no longer required in this type of project, since our environments can be built directly in our interactive maps. 
+	
+<pre>
+|-- Content
+    |-- <a href="#2.2">RLZ_LEDDemo</a>
+        |-- Characters
+	|   |-- Mannequin
+        |   |   |-- <a href="#2.7">Animations</a>
+        |   |   |-- Audio
+        |   |-- Burnham
+        |   |-- <a href="#2.1.3">Zoe</a>
+        |-- <a href="#2.5">Core</a>
+        |   |-- Engine
+        |   |-- <a href="#2.1.2">GameModes</a>
+        |   |-- Interactables
+	|-- Lighting
+	|   |-- HDRI
+	|   |   |-- Dawn
+	|   |   |-- Overcast
+        |-- Props
+	|   |-- RocketLauncher
+        |-- Effects
+        |   |-- Electrical
+        |   |-- Fire
+        |   |-- Weather
+        |-- <a href="#2.4">Maps</a>
+        |   |-- Warehouse
+        |-- <a href="#2.8">MaterialLibrary</a>
+        |   |-- MaterialFunctions
+	|   |-- Metal
+        |   |-- Paint
+	|   |-- Landscape
+        |   |-- Utility
+	|   |   |-- Debug
+        |   |   |-- Tileables
+	|-- Vehicles
+	|   |-- LargeAlienShip
+	|   |   |-- Import
+	|   |   |   |-- txt
+	|   |   |   |-- mdl
 </pre>
 
 # };
