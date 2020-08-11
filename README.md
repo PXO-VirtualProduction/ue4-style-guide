@@ -1422,7 +1422,9 @@ We encourage you to fork this guide and change the rules to fit your team's styl
 PXO projects can be divided into two categories: Shot-Based and Demo-Based.
 Listed below are examples of project structures for both types of PXO projects.
 
-> While we are adhering to Allar's [rules regarding asset-type-based folders](#2-content-directory-structure-), certain assets may require bulk imports from the X:/ drive. In these cases, we can create an `Import` folder. Within this folder, we can mimic the asset's `_publish` folder. Examples of this can be seen in the example structures below.
+> While we are adhering to Allar's [rules regarding asset-type-based folders](#2-content-directory-structure-), certain assets may require bulk imports from the X:/ drive. In these cases, we can create an `Import` folder. Within this folder, we can mimic the asset's `_publish` folder (minus the channel [i.e. `clr`, `nrm`] folders, and `fullres` folders, as they are redundant due to Unreal's search functions and filters).
+
+Examples of this can be seen in the structures below.
 
 <a name="8e1"><a>
 ### 8e1 Example Shot-Based Project Content Structure
@@ -1442,28 +1444,29 @@ The structure below should shed some light on what that entails.
         |-- Props
 	|   |-- RocketLauncher
 	|-- Vehicles
-	    |-- AlienShip
+	|   |-- LargeAlienShip
+	|   |   |-- Import
+	|   |   |   |-- txt
+	|   |   |   |-- mdl
         |-- Effects
         |   |-- Electrical
         |   |-- Fire
         |   |-- Weather
         |-- Environments
-        |   |-- Campaign1
-        |   |-- Campaign2
+        |   |-- Canyon
         |-- <a href="#2.8">MaterialLibrary</a>
-        |   |-- Debug
         |   |-- Metal
         |   |-- Paint
         |   |-- Utility
-        |   |-- Weathering
-        |-- Placeables
-        |   |-- Pickups
-        |-- Weapons
-            |-- Common
-            |-- Pistols
-            |   |-- DesertEagle
-            |   |-- RocketPistol
-            |-- Rifles
+	|   |   |-- Debug
+        |   |   |-- Tileables
+	|-- Shots
+	|   |-- 000
+	|   |   |-- 000-700
+	|   |   |   |-- Anim
+	|   |   |   |   |-- v001
+	|   |   |   |-- Cameras
+	|   |   |   |-- Layout
 </pre>
 
 # };
