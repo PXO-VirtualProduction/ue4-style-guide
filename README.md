@@ -1415,4 +1415,171 @@ See [LICENSE](/LICENSE)
 
 We encourage you to fork this guide and change the rules to fit your team's style guide. Below, you may list some amendments to the style guide. This allows you to periodically update your style guide without having to deal with merge conflicts.
 
+<a name="pxo"></a>
+<a name="megascans"></a>
+<a name="8"></a>
+## 8. Megascans
+
+Megascan folders are placed outside of the root project folder, due to the Bridge plugin's import directory.
+This is admissible, as it still conforms to the _Gamemakin LLC_ style guide.
+An example of this can be seen in the <a href="#pxo-cds">content directory structures</a> below.
+
+> If these assets are being modified at all, they should be branched into their own subfolder under `YourShowFolder` > `Props`.  
+This includes their dependencies (i.e. textures, LODs).
+
+<a name="pxo-cds"></a>
+<a name="9"></a>
+## 9. PXO Content Directory Structure
+
+PXO projects can be divided into two categories: Shot-Based and Interaction-Based.
+Listed below are examples of project structures for both types of PXO projects.
+
+> While we are adhering to Allar's [rules](#2-content-directory-structure-) regarding folders based on asset types (i.e. `Materials`, `Textures`), certain assets may require bulk imports from the X:/ drive. In these cases, we can create an `Import` folder.  
+Within this `Import` folder, we can mimic the X drive's `_publish` folder (minus the channel [i.e. `clr`, `nrm`] folders, and `fullres` folders, as they are made redundant by Unreal's search functions and filters).
+
+Examples of these rules can be seen below.
+
+<a name="example-shot-based-project-content-structure"><a>
+<a name="9e1"><a>
+### 9e1 Example Shot-Based Project Content Structure
+
+Shot-Based projects are meant to more closely resemble the X:/ Drive's structure.\
+The structure below should shed some light on what that entails.\
+> Note the exclusion of the <a href="#2.4">`Maps`</a> folder — this folder is only relevant to <a href="#example-interaction-based-project-content-structure">Interaction-Based</a> projects.\
+All our maps can instead be housed in our shot folders.\
+The `Environments` folder can include maps as well. These maps can be streamed into our shots.
+	
+<pre>
+|-- Content
+    |-- <a href="#megascans">Megascans</a>
+    |-- <a href="#megascans">MSPresets</a>
+    |-- <a href="#2.2">RLZ_ShowTitle</a>
+        |-- Characters
+	|   |-- Mannequin
+        |   |   |-- <a href="#2.7">Animations</a>
+        |   |   |-- Audio
+        |   |-- Burnham
+        |   |-- <a href="#2.1.3">Zoe</a>
+	|-- Cinematic
+	|   |-- CameraShake
+	|-- Lighting
+	|   |-- HDRI
+	|   |   |-- Overcast
+        |-- Props
+	|   |-- RocketLauncher
+        |-- Effects
+        |   |-- Electrical
+        |   |-- Fire
+        |   |-- Weather
+        |-- Environments
+        |   |-- Canyon
+        |-- <a href="#2.8">MaterialLibrary</a>
+        |   |-- MaterialFunctions
+	|   |-- Metal
+        |   |-- Paint
+	|   |-- Landscape
+        |   |-- Utility
+	|   |   |-- Debug
+        |   |   |-- Tileables
+	|-- Shots
+	|   |-- 000
+	|   |   |-- 000-700
+	|   |   |   |-- Anim
+	|   |   |   |   |-- v001
+	|   |   |   |-- Cameras
+	|   |   |   |-- Layout
+	|-- Vehicles
+	|   |-- LargeAlienShip
+	|   |   |-- Import
+	|   |   |   |-- txt
+	|   |   |   |-- mdl
+</pre>
+
+<a name="example-interaction-based-project-content-structure"><a>
+<a name="9e2"><a>
+### 9e2 Example Interaction-Based Project Content Structure
+
+Much like Shot-Based projects, Interaction-Based projects are pulled slightly towards our X:/ drive's structure.
+The key difference with Interaction-Based projects is the <a href="#2.4">Maps</a> folder. The 'Environments' folder is no longer required in this type of project, since our environments can be built directly in our interactive maps.\
+> **Question:** What if I need to import **layout geo**, **scan geo**, or any **environment-specific geo**? *(i.e. tons of walls and intricately placed trinkets from Maya)*? Do I dump these in the `Maps` folder?\
+**Answer:** Glad you asked! In this case, we _can_ include an `Environments` folder. But, note that this folder WILL NOT include any maps. It will only be used as a shell for our asset dumps. All our maps will be stored in the `Maps` folder.
+	
+<pre>
+|-- Content
+    |-- <a href="#megascans">Megascans</a>
+    |-- <a href="#megascans">MSPresets</a>
+    |-- <a href="#2.2">RLZ_LEDDemo</a>
+        |-- Characters
+	|   |-- Mannequin
+        |   |   |-- <a href="#2.7">Animations</a>
+        |   |   |-- Audio
+        |   |-- Burnham
+        |   |-- <a href="#2.1.3">Zoe</a>
+        |-- <a href="#2.5">Core</a>
+        |   |-- Engine
+        |   |-- <a href="#2.1.2">GameModes</a>
+        |   |-- Interactables
+	|-- Environments
+        |   |-- Warehouse
+	|   |   |-- Import
+	|   |   |   |layout
+	|   |   |   |mdl_lidar
+	|-- Lighting
+	|   |-- HDRI
+	|   |   |-- Overcast
+        |-- Props
+	|   |-- RocketLauncher
+        |-- Effects
+        |   |-- Electrical
+        |   |-- Fire
+        |   |-- Weather
+        |-- <a href="#2.4">Maps</a>
+        |-- <a href="#2.8">MaterialLibrary</a>
+        |   |-- MaterialFunctions
+	|   |-- Metal
+        |   |-- Paint
+	|   |-- Landscape
+        |   |-- Utility
+	|   |   |-- Debug
+        |   |   |-- Tileables
+	|-- Vehicles
+	|   |-- LargeAlienShip
+	|   |   |-- Import
+	|   |   |   |-- txt
+	|   |   |   |-- mdl
+</pre>
+
+## 10. PXO Shots
+
+The following is a breakdown of our shot-by-shot practices.\
+
+<a name="10.1"></a>
+<a name="shots-root-folder"></a>
+### 10.1 Root Folder
+Maps and sequencers can be found in the shot's root folder and must be named according to the _Gamemakin LLC_ style guide.\
+As per the style guide, the master map (and in this case, sequencer) is labeled _without_ a suffix.\
+As shots are split into tasks, the maps/sequencers can be split using a suffix.\
+![Shot Root Folder](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_shots-cdstructure-root.PNG "Shot Root Folder")
+
+### 10.2 Sequencer Workflow
+Sequencers should always be streamed into a master sequence (labeled _without_ a suffix)\
+Cameras should be imported as **Shot** tracks.\
+Tasks (i.e. Lighting, FX, Layout, Anim) should be imported as **Subscenes**.\
+This allows for easy camera-locking through the sequencer, as well as a visual distinction between tasks and cameras.\
+![Shot Tracks and Subscenes](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_shots-workflow-masterseqencer-shotsandsubscenes.PNG "Shot Tracks and Subscenes")
+
+### 10.3 Cameras
+
+#### 10.3.1 Naming our Camera Sequencers
+As opposed to the standard Level Sequencer prefix, cameras are identified with the _\_CAM_ prefix.\
+![Camera Sequencer Assets](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_shots-cdstructure-cameras.PNG "Camera Sequencer Assets")\
+
+#### 10.3.2 Naming our Imported Cameras
+Imported cameras are not Unreal assets in and of themselves; they are instead, spawnable actors contained in a Level Sequencer asset.\
+What does this mean for our workflow? This means that once a camera is imported, we have no way of knowing its source path; therefore, we have no way of knowing its version number, or its original Maya artist.\
+For this reason, we should be extra descriptive when naming our camera actors. 
+
+Imported camera _actors_ should follow the naming structure: `CAM_Descriptor_Version_OriginalArtistInitials`.\
+![Imported Camera Actor Naming](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_shots-workflow-camera-labeling.PNG "Imported Camera Actor Naming")\
+
 # };
