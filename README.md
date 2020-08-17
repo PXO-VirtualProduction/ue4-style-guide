@@ -1607,4 +1607,20 @@ The following is an example of the Character's folder after publishing.
 The character's Skeletal mesh should be the root of the Blueprint. This will allow objects to be attached to the character's bones in the *World Outliner* if needed.\
 ![Character Blueprint Root](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_rigs-structure-blueprint-root.png "Character Blueprint Root")
 
+### 11.2 Rig Updates
+Rigs can be updated by re-importing the FBX using an updated file path.\
+This can be accomplished using the following steps:
+> 1. Right-click the Skeletal Mesh
+
+> 2. Select 'Reimport with New File Path"
+
+> 3. Select the path of your new rig
+
+> 4. Regenerate the Skeleton if needed.\
+Regenerating the Skeleton could invalidate Animations that were mapped to the previous skeleton.\
+![Skeleton Regeneration](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_rigs-workflow-skeleton-regeneration.PNG "Skeleton Regeneration")\
+These animations can be re-imported using the same steps as above.\
+(*'Reimport with New File Path'*)
+
+
 # };
