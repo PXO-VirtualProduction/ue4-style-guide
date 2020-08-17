@@ -1605,6 +1605,6 @@ The following is an example of the Character's folder after publishing.
 
 #### 11.1e2 
 The character's Skeletal mesh should be the root of the Blueprint. This will allow objects to be attached to the character's bones in the *World Outliner* if needed.\
-![Character Blueprint Root](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_rigs-structure-blueprint-root.PNG "Character Blueprint Root")
+![Character Blueprint Root](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_rigs-structure-blueprint-root.png "Character Blueprint Root")
 
 # };
