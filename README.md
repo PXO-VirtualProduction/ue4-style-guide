@@ -56,6 +56,8 @@ There are a few different ways you can name things. Here are some common casing 
 >
 > Words can arbitrarily start upper or lowercase but words are separated by an underscore, e.g. `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
 
+To conform to the remainder of this style guide, our PXO projects will refer to **PascalCase**.
+
 <a name="terms-var-prop"></a>
 ##### Variables / Properties
 
