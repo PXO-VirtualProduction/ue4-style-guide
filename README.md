@@ -1437,6 +1437,8 @@ Listed below are examples of project structures for both types of PXO projects.
 > While we are adhering to Allar's [rules](#2-content-directory-structure-) regarding folders based on asset types (i.e. `Materials`, `Textures`), certain assets may require bulk imports from the X:/ drive. In these cases, we can create an `Import` folder.  
 Within this `Import` folder, we can mimic the X drive's `_publish` folder (minus the channel [i.e. `clr`, `nrm`] folders, and `fullres` folders, as they are made redundant by Unreal's search functions and filters).
 
+> While we are adhering to Allar's [rules](#2-content-directory-structure-) regarding folders based on asset types (i.e. `Materials`, `Textures`), certain assets may contain a large about of a certain asset type. Since these can clutter our Content Browser, we can create <a href="#27-very-large-asset-sets-get-their-own-folder-layout-">subfolders</a> in these cases. If there are more than **5** of a certain asset type, this asset type can warrant its own subfolder. 
+
 Examples of these rules can be seen below.
 
 <a name="example-shot-based-project-content-structure"><a>
@@ -1549,6 +1551,8 @@ The key difference with Interaction-Based projects is the <a href="#2.4">Maps</a
 	|   |   |   |-- mdl
 </pre>
 
+<a name="pxo-shots"></a>
+<a name="10"></a>
 ## 10. PXO Shots
 
 The following is a breakdown of our shot-by-shot practices.\
@@ -1572,7 +1576,7 @@ This allows for easy camera-locking through the sequencer, as well as a visual d
 
 #### 10.3.1 Naming our Camera Sequencers
 As opposed to the standard Level Sequencer prefix, cameras are identified with the _\_CAM_ prefix.\
-![Camera Sequencer Assets](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_shots-cdstructure-cameras.PNG "Camera Sequencer Assets")\
+![Camera Sequencer Assets](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_shots-cdstructure-cameras.PNG "Camera Sequencer Assets")
 
 #### 10.3.2 Naming our Imported Cameras
 Imported cameras are not Unreal assets in and of themselves; they are instead, spawnable actors contained in a Level Sequencer asset.\
@@ -1581,5 +1585,26 @@ For this reason, we should be extra descriptive when naming our camera actors.
 
 Imported camera _actors_ should follow the naming structure: `CAM_Descriptor_Version_OriginalArtistInitials`.\
 ![Imported Camera Actor Naming](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_shots-workflow-camera-labeling.PNG "Imported Camera Actor Naming")\
+
+<a name="pxo-rigs"></a>
+<a name="11"></a>
+## 11. PXO Rigs
+
+The following is a list of our amendments to the standard rig structure/workflow.
+
+<a name="11.1"></a>
+### 11.1 Rig Publishes
+Before being placed in any map, rigs should always be *"published"* to a Blueprint.\
+This allows for changes and additions to the rig to be easily propagated throughout the show.
+
+#### 11.1e1 
+The following is an example of the Character's folder after publishing.
+> *Note:* In this case, the character had quite a few materials and textures; therefore, they were given their own subfolders.
+
+![Character Root Folder](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_rigs-structure-root-folder.PNG "Character Root Folder")
+
+#### 11.1e2 
+The character's Skeletal mesh should be the root of the Blueprint. This will allow objects to be attached to the character's bones in the *World Outliner* if needed.\
+![Character Blueprint Root](https://raw.githubusercontent.com/AsadManzoor/ue4-style-guide/master/images/PXO_rigs-structure-blueprint-root.PNG "Character Blueprint Root")
 
 # };
